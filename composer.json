@@ -4,5 +4,10 @@
 	"keywords": [ "laravel", "sus", "esus", "ras" ],
 	"homepage": "https://github.com/denissonleal/lealjs",
 	"require": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Sysvale\\": "2.1/"
+		}
 	}
 }
