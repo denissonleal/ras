@@ -1,9 +1,11 @@
 <?php
+
 require 'vendor/autoload.php';
 
-use Sysvale\cds\genphp\br\gov\saude\esusab\ras\cadastrodomiciliar\CadastroDomiciliarThrift;
+use Thrift\Type\TType;
+use br\gov\saude\esusab\dadotransp\VersaoThrift;
+use br\gov\saude\esusab\ras\atenddomiciliar\FichaAtendimentoDomiciliarChildThrift;
 
-
-$n = new CadastroDomiciliarThrift();
-
-echo 'ddd';
+print_r(new TType);
+print_r(new VersaoThrift);
+print_r(new FichaAtendimentoDomiciliarChildThrift);
