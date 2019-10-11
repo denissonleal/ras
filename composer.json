@@ -7,7 +7,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Sysvale\\": "2.1/"
+			"Thrift\\": "src/thrift",
+			"br\\": ["src/cds/gen-php/br", "src/transport/gen-php/br"]
 		}
 	}
 }
