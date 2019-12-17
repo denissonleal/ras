@@ -666,4 +666,3 @@ class FichaProcedimentoMasterThrift {
 
 }
 
-
