@@ -51,6 +51,10 @@ class ParticipanteRowItemThrift {
    * @var int
    */
   public $sexo = null;
+  /**
+   * @var string
+   */
+  public $cpfParticipante = null;
 
   public function __construct($vals=null) {
     if (!isset(self::$_TSPEC)) {
@@ -87,6 +91,10 @@ class ParticipanteRowItemThrift {
           'var' => 'sexo',
           'type' => TType::I64,
           ),
+        9 => array(
+          'var' => 'cpfParticipante',
+          'type' => TType::STRING,
+          ),
         );
     }
     if (is_array($vals)) {
@@ -113,6 +121,9 @@ class ParticipanteRowItemThrift {
       }
       if (isset($vals['sexo'])) {
         $this->sexo = $vals['sexo'];
+      }
+      if (isset($vals['cpfParticipante'])) {
+        $this->cpfParticipante = $vals['cpfParticipante'];
       }
     }
   }
@@ -192,6 +203,13 @@ class ParticipanteRowItemThrift {
             $xfer += $input->skip($ftype);
           }
           break;
+        case 9:
+          if ($ftype == TType::STRING) {
+            $xfer += $input->readString($this->cpfParticipante);
+          } else {
+            $xfer += $input->skip($ftype);
+          }
+          break;
         default:
           $xfer += $input->skip($ftype);
           break;
@@ -243,6 +261,11 @@ class ParticipanteRowItemThrift {
     if ($this->sexo !== null) {
       $xfer += $output->writeFieldBegin('sexo', TType::I64, 8);
       $xfer += $output->writeI64($this->sexo);
+      $xfer += $output->writeFieldEnd();
+    }
+    if ($this->cpfParticipante !== null) {
+      $xfer += $output->writeFieldBegin('cpfParticipante', TType::STRING, 9);
+      $xfer += $output->writeString($this->cpfParticipante);
       $xfer += $output->writeFieldEnd();
     }
     $xfer += $output->writeFieldStop();
