@@ -10,7 +10,7 @@ A estrutura RAS (Registro de Atendimento Simplificado) é baseada em um conjunto
 Coloque no `composer.json`:
 
 ``` js
-"denissonleal/ras": "v0.2.x"
+"denissonleal/ras": "v0.3.x"
 ```
 
 depois rode o `composer update`
