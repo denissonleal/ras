@@ -1,5 +1,6 @@
 {
 	"name": "denissonleal/ras",
+	"version": "0.4.1",
 	"description": "API RAS para exportação do SUS",
 	"keywords": [ "laravel", "sus", "esus", "ras" ],
 	"homepage": "https://github.com/denissonleal/lealjs",
