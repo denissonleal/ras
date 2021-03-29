@@ -1,4 +1,5 @@
 <?php
+
 namespace br\gov\saude\esusab\ras\visitadomiciliar;
 
 /**
@@ -7,6 +8,7 @@ namespace br\gov\saude\esusab\ras\visitadomiciliar;
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
+
 use Thrift\Base\TBase;
 use Thrift\Type\TType;
 use Thrift\Type\TMessageType;
@@ -16,7 +18,9 @@ use Thrift\Protocol\TProtocol;
 use Thrift\Protocol\TBinaryProtocolAccelerated;
 use Thrift\Exception\TApplicationException;
 
-class FichaVisitaDomiciliarChildThrift {
+
+class FichaVisitaDomiciliarChildThrift
+{
   static $_TSPEC;
 
   /**
@@ -90,96 +94,97 @@ class FichaVisitaDomiciliarChildThrift {
   /**
    * @var int
    */
-  public $glicemia = null;
+  public $tipoGlicemia = null;
   /**
    * @var int
    */
-  public $tipoGlicemia = null;
+  public $glicemia = null;
 
-  public function __construct($vals=null) {
+  public function __construct($vals = null)
+  {
     if (!isset(self::$_TSPEC)) {
       self::$_TSPEC = array(
         1 => array(
           'var' => 'turno',
           'type' => TType::I64,
-          ),
+        ),
         2 => array(
           'var' => 'numProntuario',
           'type' => TType::STRING,
-          ),
+        ),
         3 => array(
           'var' => 'cnsCidadao',
           'type' => TType::STRING,
-          ),
+        ),
         4 => array(
           'var' => 'dtNascimento',
           'type' => TType::I64,
-          ),
+        ),
         5 => array(
           'var' => 'sexo',
           'type' => TType::I64,
-          ),
+        ),
         6 => array(
           'var' => 'statusVisitaCompartilhadaOutroProfissional',
           'type' => TType::BOOL,
-          ),
+        ),
         7 => array(
           'var' => 'motivosVisita',
           'type' => TType::LST,
           'etype' => TType::I64,
           'elem' => array(
             'type' => TType::I64,
-            ),
           ),
+        ),
         8 => array(
           'var' => 'desfecho',
           'type' => TType::I64,
-          ),
+        ),
         9 => array(
           'var' => 'microArea',
           'type' => TType::STRING,
-          ),
+        ),
         10 => array(
           'var' => 'stForaArea',
           'type' => TType::BOOL,
-          ),
+        ),
         11 => array(
           'var' => 'tipoDeImovel',
           'type' => TType::I64,
-          ),
+        ),
         12 => array(
           'var' => 'pesoAcompanhamentoNutricional',
           'type' => TType::DOUBLE,
-          ),
+        ),
         13 => array(
           'var' => 'alturaAcompanhamentoNutricional',
           'type' => TType::DOUBLE,
-          ),
+        ),
         14 => array(
           'var' => 'cpfCidadao',
           'type' => TType::STRING,
-          ),
+        ),
         15 => array(
           'var' => 'pressaoSistolica',
-          'type' => TType::I64,
-          ),
+          'type' => TType::I32,
+        ),
         16 => array(
           'var' => 'pressaoDiastolica',
-          'type' => TType::I64,
-          ),
+          'type' => TType::I32,
+        ),
         17 => array(
           'var' => 'temperatura',
           'type' => TType::DOUBLE,
-          ),
+        ),
         18 => array(
-          'var' => 'glicemia',
-          'type' => TType::I64,
-          ),
-        19 => array(
           'var' => 'tipoGlicemia',
           'type' => TType::I64,
-          ),
-        );
+        ),
+        19 => array(
+          'var' => 'glicemia',
+          'type' => TType::I32,
+        ),
+      );
     }
     if (is_array($vals)) {
       if (isset($vals['turno'])) {
@@ -233,16 +238,17 @@ class FichaVisitaDomiciliarChildThrift {
       if (isset($vals['temperatura'])) {
         $this->temperatura = $vals['temperatura'];
       }
-      if (isset($vals['glicemia'])) {
-        $this->glicemia = $vals['glicemia'];
-      }
       if (isset($vals['tipoGlicemia'])) {
         $this->tipoGlicemia = $vals['tipoGlicemia'];
+      }
+      if (isset($vals['glicemia'])) {
+        $this->glicemia = $vals['glicemia'];
       }
     }
   }
 
-  public function getName() {
+  public function getName()
+  {
     return 'FichaVisitaDomiciliarChildThrift';
   }
 
@@ -253,14 +259,12 @@ class FichaVisitaDomiciliarChildThrift {
     $ftype = 0;
     $fid = 0;
     $xfer += $input->readStructBegin($fname);
-    while (true)
-    {
+    while (true) {
       $xfer += $input->readFieldBegin($fname, $ftype, $fid);
       if ($ftype == TType::STOP) {
         break;
       }
-      switch ($fid)
-      {
+      switch ($fid) {
         case 1:
           if ($ftype == TType::I64) {
             $xfer += $input->readI64($this->turno);
@@ -309,11 +313,10 @@ class FichaVisitaDomiciliarChildThrift {
             $_size0 = 0;
             $_etype3 = 0;
             $xfer += $input->readListBegin($_etype3, $_size0);
-            for ($_i4 = 0; $_i4 < $_size0; ++$_i4)
-            {
+            for ($_i4 = 0; $_i4 < $_size0; ++$_i4) {
               $elem5 = null;
               $xfer += $input->readI64($elem5);
-              $this->motivosVisita []= $elem5;
+              $this->motivosVisita[] = $elem5;
             }
             $xfer += $input->readListEnd();
           } else {
@@ -370,36 +373,36 @@ class FichaVisitaDomiciliarChildThrift {
           }
           break;
         case 15:
-          if ($ftype == TType::I64) {
-            $xfer += $input->readString($this->pressaoSistolica);
+          if ($ftype == TType::I32) {
+            $xfer += $input->readI32($this->pressaoSistolica);
           } else {
             $xfer += $input->skip($ftype);
           }
           break;
         case 16:
-          if ($ftype == TType::I64) {
-            $xfer += $input->readString($this->pressaoDiastolica);
+          if ($ftype == TType::I32) {
+            $xfer += $input->readI32($this->pressaoDiastolica);
           } else {
             $xfer += $input->skip($ftype);
           }
           break;
         case 17:
           if ($ftype == TType::DOUBLE) {
-            $xfer += $input->readString($this->temperatura);
+            $xfer += $input->readDouble($this->temperatura);
           } else {
             $xfer += $input->skip($ftype);
           }
           break;
         case 18:
           if ($ftype == TType::I64) {
-            $xfer += $input->readString($this->glicemia);
+            $xfer += $input->readI64($this->tipoGlicemia);
           } else {
             $xfer += $input->skip($ftype);
           }
           break;
         case 19:
-          if ($ftype == TType::I64) {
-            $xfer += $input->readString($this->tipoGlicemia);
+          if ($ftype == TType::I32) {
+            $xfer += $input->readI32($this->glicemia);
           } else {
             $xfer += $input->skip($ftype);
           }
@@ -414,7 +417,8 @@ class FichaVisitaDomiciliarChildThrift {
     return $xfer;
   }
 
-  public function write($output) {
+  public function write($output)
+  {
     $xfer = 0;
     $xfer += $output->writeStructBegin('FichaVisitaDomiciliarChildThrift');
     if ($this->turno !== null) {
@@ -451,12 +455,9 @@ class FichaVisitaDomiciliarChildThrift {
       if (!is_array($this->motivosVisita)) {
         throw new TProtocolException('Bad type in structure.', TProtocolException::INVALID_DATA);
       }
-      $xfer += $output->writeFieldBegin('motivosVisita', TType::LST, 7);
-      {
-        $output->writeListBegin(TType::I64, count($this->motivosVisita));
-        {
-          foreach ($this->motivosVisita as $iter6)
-          {
+      $xfer += $output->writeFieldBegin('motivosVisita', TType::LST, 7); {
+        $output->writeListBegin(TType::I64, count($this->motivosVisita)); {
+          foreach ($this->motivosVisita as $iter6) {
             $xfer += $output->writeI64($iter6);
           }
         }
@@ -500,38 +501,38 @@ class FichaVisitaDomiciliarChildThrift {
       $xfer += $output->writeFieldEnd();
     }
     if ($this->pressaoSistolica !== null) {
-      $xfer += $output->writeFieldBegin('pressaoSistolica', TType::I64, 11);
-      $xfer += $output->writeI64($this->pressaoSistolica);
+      $xfer += $output->writeFieldBegin('pressaoSistolica', TType::I32, 15);
+      $xfer += $output->writeI32($this->pressaoSistolica);
       $xfer += $output->writeFieldEnd();
     }
     if ($this->pressaoDiastolica !== null) {
-      $xfer += $output->writeFieldBegin('pressaoDiastolica', TType::I64, 11);
-      $xfer += $output->writeI64($this->pressaoDiastolica);
+      $xfer += $output->writeFieldBegin('pressaoDiastolica', TType::I32, 16);
+      $xfer += $output->writeI32($this->pressaoDiastolica);
       $xfer += $output->writeFieldEnd();
     }
     if ($this->temperatura !== null) {
-      $xfer += $output->writeFieldBegin('temperatura', TType::I64, 11);
+      $xfer += $output->writeFieldBegin('temperatura', TType::DOUBLE, 17);
       $xfer += $output->writeDouble($this->temperatura);
       $xfer += $output->writeFieldEnd();
     }
-    if ($this->glicemia !== null) {
-      $xfer += $output->writeFieldBegin('glicemia', TType::I64, 11);
-      $xfer += $output->writeI64($this->glicemia);
+    if ($this->tipoGlicemia !== null) {
+      $xfer += $output->writeFieldBegin('tipoGlicemia', TType::I64, 18);
+      $xfer += $output->writeI64($this->tipoGlicemia);
       $xfer += $output->writeFieldEnd();
     }
-    if ($this->tipoGlicemia !== null) {
-      $xfer += $output->writeFieldBegin('tipoGlicemia', TType::I64, 11);
-      $xfer += $output->writeI64($this->tipoGlicemia);
+    if ($this->glicemia !== null) {
+      $xfer += $output->writeFieldBegin('glicemia', TType::I32, 19);
+      $xfer += $output->writeI32($this->glicemia);
       $xfer += $output->writeFieldEnd();
     }
     $xfer += $output->writeFieldStop();
     $xfer += $output->writeStructEnd();
     return $xfer;
   }
-
 }
 
-class FichaVisitaDomiciliarMasterThrift {
+class FichaVisitaDomiciliarMasterThrift
+{
   static $_TSPEC;
 
   /**
@@ -551,22 +552,23 @@ class FichaVisitaDomiciliarMasterThrift {
    */
   public $visitasDomiciliares = null;
 
-  public function __construct($vals=null) {
+  public function __construct($vals = null)
+  {
     if (!isset(self::$_TSPEC)) {
       self::$_TSPEC = array(
         1 => array(
           'var' => 'uuidFicha',
           'type' => TType::STRING,
-          ),
+        ),
         2 => array(
           'var' => 'tpCdsOrigem',
           'type' => TType::I32,
-          ),
+        ),
         3 => array(
           'var' => 'headerTransport',
           'type' => TType::STRUCT,
           'class' => '\br\gov\saude\esusab\ras\common\UnicaLotacaoHeaderThrift',
-          ),
+        ),
         4 => array(
           'var' => 'visitasDomiciliares',
           'type' => TType::LST,
@@ -574,9 +576,9 @@ class FichaVisitaDomiciliarMasterThrift {
           'elem' => array(
             'type' => TType::STRUCT,
             'class' => '\br\gov\saude\esusab\ras\visitadomiciliar\FichaVisitaDomiciliarChildThrift',
-            ),
           ),
-        );
+        ),
+      );
     }
     if (is_array($vals)) {
       if (isset($vals['uuidFicha'])) {
@@ -594,7 +596,8 @@ class FichaVisitaDomiciliarMasterThrift {
     }
   }
 
-  public function getName() {
+  public function getName()
+  {
     return 'FichaVisitaDomiciliarMasterThrift';
   }
 
@@ -605,14 +608,12 @@ class FichaVisitaDomiciliarMasterThrift {
     $ftype = 0;
     $fid = 0;
     $xfer += $input->readStructBegin($fname);
-    while (true)
-    {
+    while (true) {
       $xfer += $input->readFieldBegin($fname, $ftype, $fid);
       if ($ftype == TType::STOP) {
         break;
       }
-      switch ($fid)
-      {
+      switch ($fid) {
         case 1:
           if ($ftype == TType::STRING) {
             $xfer += $input->readString($this->uuidFicha);
@@ -641,12 +642,11 @@ class FichaVisitaDomiciliarMasterThrift {
             $_size7 = 0;
             $_etype10 = 0;
             $xfer += $input->readListBegin($_etype10, $_size7);
-            for ($_i11 = 0; $_i11 < $_size7; ++$_i11)
-            {
+            for ($_i11 = 0; $_i11 < $_size7; ++$_i11) {
               $elem12 = null;
               $elem12 = new \br\gov\saude\esusab\ras\visitadomiciliar\FichaVisitaDomiciliarChildThrift();
               $xfer += $elem12->read($input);
-              $this->visitasDomiciliares []= $elem12;
+              $this->visitasDomiciliares[] = $elem12;
             }
             $xfer += $input->readListEnd();
           } else {
@@ -663,7 +663,8 @@ class FichaVisitaDomiciliarMasterThrift {
     return $xfer;
   }
 
-  public function write($output) {
+  public function write($output)
+  {
     $xfer = 0;
     $xfer += $output->writeStructBegin('FichaVisitaDomiciliarMasterThrift');
     if ($this->uuidFicha !== null) {
@@ -688,12 +689,9 @@ class FichaVisitaDomiciliarMasterThrift {
       if (!is_array($this->visitasDomiciliares)) {
         throw new TProtocolException('Bad type in structure.', TProtocolException::INVALID_DATA);
       }
-      $xfer += $output->writeFieldBegin('visitasDomiciliares', TType::LST, 4);
-      {
-        $output->writeListBegin(TType::STRUCT, count($this->visitasDomiciliares));
-        {
-          foreach ($this->visitasDomiciliares as $iter13)
-          {
+      $xfer += $output->writeFieldBegin('visitasDomiciliares', TType::LST, 4); {
+        $output->writeListBegin(TType::STRUCT, count($this->visitasDomiciliares)); {
+          foreach ($this->visitasDomiciliares as $iter13) {
             $xfer += $iter13->write($output);
           }
         }
