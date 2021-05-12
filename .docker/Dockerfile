@@ -44,6 +44,7 @@ RUN apt-get update && apt-get upgrade -y && \
   apt-get --no-install-recommends -y install php7.4 \
   php7.4-mbstring \
   php7.4-dom \
+  php7.4-cli \
   php7.4-xml \
   php7.4-curl \
   php7.4-imagick \
@@ -54,8 +55,8 @@ RUN apt-get update && apt-get upgrade -y && \
   php7.4-dev
 
 #Install Composer
-RUN cd /tmp && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+RUN cd /tmp && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+  && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
   && php -r "unlink('composer-setup.php');"
 
 #Install Node e NPM
