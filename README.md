@@ -10,7 +10,19 @@ A estrutura RAS (Registro de Atendimento Simplificado) é baseada em um conjunto
 Coloque no `composer.json`:
 
 ``` js
-"denissonleal/ras": "v0.3.x"
+"denissonleal/ras": "v0.4.x"
 ```
 
 depois rode o `composer update`
+
+## Atualizando arquivos de thrift localmente
+
+Inicialize o container do thift
+```shell-session
+$ docker-compose up -d
+```
+
+Rode o script de atualização do thrift
+```shell-session
+$ ./on-service.sh bin/update_thrift_files.sh
+```

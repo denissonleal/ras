@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/laboratoriobridge/esusab-integracao storage/esusab
+git clone https://github.com/laboratoriobridge/esusab-integracao storage/esusab || true
 
 layouts=(
 	'layout-camada-transport'

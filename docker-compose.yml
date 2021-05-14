@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  thrift-app:
+    image: elaynelemos/thrift:ubuntu-bionic
+    volumes:
+      - ./:/home/thrift/
+    stdin_open: true
+    tty: true
+    working_dir: /home/thrift/
